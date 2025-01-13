@@ -16,7 +16,7 @@
         <a href="#" class="text-2xl font-semibold mb-8 block text-center">Admin Panel</a>
         <ul>
             <li><a href="{{ route('admin.dashboard') }}" class="text-gray-300 py-3 px-4 bg-blue-700 rounded-lg transition-all block">Dashboard</a></li>
-            <li><a href="{{ route('admin.dashboard') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Manage Products</a></li>
+            <li><a href="{{ route('admin.products') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Manage Products</a></li>
             <li><a href="{{ route('admin.dashboard') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Manage Users</a></li>
             <li><a href="{{ route('admin.dashboard') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Manage Orders</a></li>
             <li><a href="{{ route('logout') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Logout</a></li>

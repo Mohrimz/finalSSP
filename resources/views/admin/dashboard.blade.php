@@ -10,7 +10,7 @@
     <div class="bg-blue-600 text-white rounded-lg shadow-lg p-6 hover:scale-105 transition-all duration-300">
         <h2 class="text-lg font-semibold">Total Products</h2>
         <p class="text-2xl">{{ $totalProducts ?? 'N/A' }}</p>
-        <a href="{{ route('admin.dashboard') }}" class="mt-4 inline-block py-2 px-4 bg-blue-800 rounded-lg text-white">View Products</a>
+        <a href="{{ route('admin.products') }}" class="mt-4 inline-block py-2 px-4 bg-blue-800 rounded-lg text-white">View Products</a>
     </div>
     <div class="bg-green-600 text-white rounded-lg shadow-lg p-6 hover:scale-105 transition-all duration-300">
         <h2 class="text-lg font-semibold">Total Users</h2>
