@@ -33,7 +33,6 @@
         <div class="container mx-auto flex items-center justify-between px-6 py-4">
             <div class="flex items-center space-x-2">
                 <div>
-                @livewire('test-component')
                 
                     <h1 class="text-xl font-bold text-black tracking-wide">TRENDY.LK</h1>
                     <p class="text-xs text-gray-500 tracking-widest">EVERY STEP MATTERS</p>

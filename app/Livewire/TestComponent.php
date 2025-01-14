@@ -8,7 +8,13 @@ use Livewire\Component;
 class TestComponent extends Component
 {
     public $search = ''; // To bind the search input
-    public $products = []; // To hold the fetched products
+    public $products; // To hold the fetched products
+
+    public function mount()
+    {
+        // Fetch all products initially
+        $this->products = Product::all();
+    }
 
     public function fetchProducts()
     {

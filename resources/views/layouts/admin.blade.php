@@ -16,11 +16,41 @@
     <div class="sidebar fixed top-0 left-0 w-64 h-full bg-blue-900 text-white p-6">
         <a href="#" class="text-2xl font-semibold mb-8 block text-center">Admin Panel</a>
         <ul>
-            <li><a href="{{ route('admin.dashboard') }}" class="text-gray-300 py-3 px-4 bg-blue-700 rounded-lg transition-all block">Dashboard</a></li>
-            <li><a href="{{ route('admin.products') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Manage Products</a></li>
-            <li><a href="{{ route('admin.dashboard') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Manage Users</a></li>
-            <li><a href="{{ route('admin.dashboard') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Manage Orders</a></li>
-            <li><a href="{{ route('logout') }}" class="text-gray-300 py-3 px-4 hover:bg-blue-700 rounded-lg mt-2 transition-all block">Logout</a></li>
+            <li>
+                <a 
+                    href="{{ route('admin.dashboard') }}" 
+                    class="py-3 px-4 rounded-lg transition-all block {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-blue-700' : 'text-gray-300 hover:bg-blue-700' }}">
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a 
+                    href="{{ route('admin.products') }}" 
+                    class="py-3 px-4 rounded-lg transition-all block {{ Route::currentRouteName() === 'admin.products' ? 'bg-blue-700' : 'text-gray-300 hover:bg-blue-700' }}">
+                    Manage Products
+                </a>
+            </li>
+            <li>
+                <a 
+                    href="{{ route('admin.dashboard') }}" 
+                    class="py-3 px-4 rounded-lg transition-all block {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-blue-700' : 'text-gray-300 hover:bg-blue-700' }}">
+                    Manage Users
+                </a>
+            </li>
+            <li>
+                <a 
+                    href="{{ route('admin.dashboard') }}" 
+                    class="py-3 px-4 rounded-lg transition-all block {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-blue-700' : 'text-gray-300 hover:bg-blue-700' }}">
+                    Manage Orders
+                </a>
+            </li>
+            <li>
+                <a 
+                    href="{{ route('home') }}" 
+                    class="py-3 px-4 rounded-lg transition-all block text-gray-300 hover:bg-blue-700">
+                    Logout
+                </a>
+            </li>
         </ul>
     </div>
 

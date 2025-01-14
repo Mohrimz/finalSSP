@@ -68,7 +68,7 @@ class ProductController extends Controller
     public function edit($id)
 {
     $product = Product::findOrFail($id);
-    return view('admin.products.edit', compact('product'));
+    return view('admin.edit', compact('product'));
 }
 public function update(Request $request, $id)
 {
@@ -77,14 +77,14 @@ public function update(Request $request, $id)
     $request->validate([
         'name' => 'required|string|max:255',
         'price' => 'required|numeric',
-        'size' => 'required|string|max:50',
+        'size' => 'required|array', // Expect an array for sizes
         'description' => 'required|string',
         'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
     ]);
 
     $product->name = $request->input('name');
     $product->price = $request->input('price');
-    $product->size = $request->input('size');
+    $product->size = implode(',', $request->input('size')); // Save sizes as a comma-separated string
     $product->description = $request->input('description');
 
     if ($request->hasFile('image')) {
@@ -92,13 +92,12 @@ public function update(Request $request, $id)
         $product->target_file = $path;
     }
 
-    // Manually updating updated_at
-    //$product->updated_at = now();
-
     $product->save();
 
-    return redirect()->route('admin.products.index')->with('message', 'Product updated successfully!');
+    return redirect()->route('admin.products')->with('message', 'Product updated successfully!');
 }
+
+
 
     // Remove the specified product from storage
     public function destroy($id)

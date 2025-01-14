@@ -1,6 +1,6 @@
 <div class="p-6 bg-gray-100">
     <!-- Search Input -->
-    <div class="flex space-x-2">
+    <div class="flex space-x-2 mb-6">
         <input 
             type="text" 
             wire:model="search" 
@@ -15,13 +15,13 @@
     </div>
 
     <!-- Display Products -->
-    @if($products)
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+    @if($products->isNotEmpty())
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @foreach ($products as $product)
                 <div class="relative border rounded-lg p-4 shadow hover:shadow-lg transition">
                     <!-- Edit Icon -->
                     <a 
-                        href="{{ route('admin.products', $product->id) }}" 
+                        href="{{ route('admin.edit', $product->id) }}" 
                         class="absolute top-2 right-2 bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition"
                         title="Edit Product">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

@@ -3,15 +3,19 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
+
 use Illuminate\Support\Facades\Route;
 
-// Welcome page
-Route::get('/', function () {
-    return view('welcome');
-});
+// // Welcome page
+// Route::get('/', function () {
+//     return view('home');
+// });
 
 // Home page
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
 
 // Dashboard (requires authentication)
 Route::get('/dashboard', function () {
@@ -35,5 +39,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
         return view('admin.products'); // Ensure this view includes the Livewire component
     })->name('products');
 });
+Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.edit');
+Route::put('/admin/products/{id}', [ProductController::class, 'update'])->name('admin.update');
 
 require __DIR__.'/auth.php';
