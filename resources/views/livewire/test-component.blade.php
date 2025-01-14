@@ -33,6 +33,23 @@
                     <h3 class="text-lg font-semibold">{{ $product->name }}</h3>
                     <p class="text-gray-600">${{ $product->price }}</p>
                     <p class="text-gray-500 text-sm">{{ \Illuminate\Support\Str::limit($product->description, 50) }}</p>
+                    
+                    <!-- Activate/Deactivate Buttons -->
+                    <div class="mt-4">
+                        @if($product->status === 'active')
+                            <button 
+                                wire:click="toggleStatus({{ $product->id }}, 'inactive')" 
+                                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+                                Deactivate
+                            </button>
+                        @else
+                            <button 
+                                wire:click="toggleStatus({{ $product->id }}, 'active')" 
+                                class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
+                                Activate
+                            </button>
+                        @endif
+                    </div>
                 </div>
             @endforeach
         </div>

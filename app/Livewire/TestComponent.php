@@ -8,12 +8,11 @@ use Livewire\Component;
 class TestComponent extends Component
 {
     public $search = ''; // To bind the search input
-    public $products; // To hold the fetched products
+    public $products = []; // To hold the fetched products
 
     public function mount()
     {
-        // Fetch all products initially
-        $this->products = Product::all();
+        $this->fetchProducts();
     }
 
     public function fetchProducts()
@@ -22,6 +21,21 @@ class TestComponent extends Component
         $this->products = Product::where('name', 'like', '%' . $this->search . '%')
             ->orWhere('description', 'like', '%' . $this->search . '%')
             ->get();
+    }
+
+    public function toggleStatus($productId, $newStatus)
+    {
+        $product = Product::find($productId);
+
+        if ($product) {
+            $product->status = $newStatus;
+            $product->save();
+
+            // Refresh products after updating the status
+            $this->fetchProducts();
+
+            session()->flash('message', 'Product status updated successfully!');
+        }
     }
 
     public function render()
