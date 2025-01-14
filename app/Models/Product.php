@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,25 +8,39 @@ class Product extends Model
 {
     use HasFactory;
 
-    // Define the table name if it's different from the default 'products'
-    protected $table = 'products';
-
-    // Specify the fields that are mass assignable
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
         'name',
-        'size',
-        'price',
         'description',
+        'price',
+        'target_file',
+        'size',
         'status',
-        'image', // This will store the image file name or path
+        'created_at',
+        'updated_at',
     ];
-    public $timestamps = false;
-    
 
-    // Optionally, you can add any relationships with other models here
-    // For example, if products belong to a category, you could define a relationship method
-    public function category()
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'price' => 'float',
+        'size' => 'array', // Cast sizes as an array if stored as JSON or comma-separated
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
+    /**
+     * Scope to filter products by status.
+     */
+    public function scopeActive($query)
     {
-        return $this->belongsTo(Category::class);
+        return $query->where('status', 'active');
     }
 }
