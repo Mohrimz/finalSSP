@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductViewController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +42,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 });
 Route::get('/admin/products/{id}/edit', [ProductController::class, 'edit'])->name('admin.edit');
 Route::put('/admin/products/{id}', [ProductController::class, 'update'])->name('admin.update');
+Route::get('/products', [ProductViewController::class, 'index'])->name('products');
+Route::get('/product/{id}', [ProductViewController::class, 'show'])->name('product.view');
 
 require __DIR__.'/auth.php';

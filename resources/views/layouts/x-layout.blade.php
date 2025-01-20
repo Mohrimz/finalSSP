@@ -41,7 +41,7 @@
 
             <nav class="flex-grow flex justify-center items-center space-x-6">
                 <a href="{{ route('home') }}" class="text-gray-700 hover:text-black font-semibold transition-colors duration-200">Home</a>
-                <a href="{{ route('home') }}" class="text-gray-700 hover:text-black font-semibold transition-colors duration-200">Products</a>
+                <a href="{{ route('products') }}" class="text-gray-700 hover:text-black font-semibold transition-colors duration-200">Products</a>
                 <div class="relative group">
                     <a href="#" class="text-gray-700 hover:text-black font-semibold transition-colors duration-200">About</a>
                     <div class="absolute left-0 hidden mt-2 w-32 bg-white border border-gray-200 shadow-lg group-hover:block">

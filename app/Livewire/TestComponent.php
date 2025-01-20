@@ -35,7 +35,7 @@ class TestComponent extends Component
             $this->fetchProducts();
 
             session()->flash('message', 'Product status updated successfully!');
-        }
+        }   
     }
 
     public function render()
