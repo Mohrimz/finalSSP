@@ -43,7 +43,7 @@
                 <a href="{{ route('home') }}" class="text-gray-700 hover:text-black font-semibold transition-colors duration-200">Home</a>
                 <a href="{{ route('products') }}" class="text-gray-700 hover:text-black font-semibold transition-colors duration-200">Products</a>
                 <div class="relative group">
-                    <a href="#" class="text-gray-700 hover:text-black font-semibold transition-colors duration-200">About</a>
+                    <a href="{{ route('about') }}" class="text-gray-700 hover:text-black font-semibold transition-colors duration-200">About</a>
                     <div class="absolute left-0 hidden mt-2 w-32 bg-white border border-gray-200 shadow-lg group-hover:block">
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
                     </div>
@@ -52,12 +52,11 @@
             </nav>
 
             <div class="flex items-center space-x-8">
-                <a href="#" class="text-gray-700 hover:text-black transition-colors duration-200 text-lg"><i class="fas fa-search"></i></a>
-                <a href="{{ route('home') }}" class="text-gray-700 hover:text-black transition-colors duration-200 relative text-lg">
+                <a href="{{ route('cart') }}" class="text-gray-700 hover:text-black transition-colors duration-200 relative text-lg">
                     <i class="fas fa-shopping-bag"></i>
                     <span class="absolute top-0 right-0 bg-orange-300 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
                 </a>
-                <a href="#" class="text-gray-700 hover:text-black transition-colors duration-200 text-lg"><i class="fas fa-heart"></i></a>
+                <a href="{{ route('wishlist') }}" class="text-gray-700 hover:text-black transition-colors duration-200 text-lg"><i class="fas fa-heart"></i></a>
 
                 <div class="flex items-center space-x-6">
                     @auth

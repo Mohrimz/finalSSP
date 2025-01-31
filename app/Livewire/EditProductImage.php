@@ -16,23 +16,26 @@ class EditProductImage extends Component
     public $progress = 0;
 
     public function updatedImage()
-    {
-        // Reset progress
-        $this->progress = 0;
+{
+    // Reset progress
+    $this->progress = 0;
 
-        // Validate the uploaded file
-        $this->validate([
-            'image' => 'required|image|max:2048', // Max 2MB
-        ]);
+    // Validate the uploaded file
+    $this->validate([
+        'image' => 'required|image|max:2048', // Max 2MB
+    ]);
 
-        // Upload the image and update the product
-        $path = $this->image->store('products', 'public');
-        $this->product->update(['target_file' => $path]);
+    // Upload the image to the 'uploads' directory
+    $path = $this->image->store('uploads', 'public');
+    
+    // Update the product's image path
+    $this->product->update(['target_file' => $path]);
 
-        // Set progress to 100 and display success message
-        $this->progress = 100;
-        session()->flash('message', 'Image uploaded successfully!');
-    }
+    // Set progress to 100 and display success message
+    $this->progress = 100;
+    session()->flash('message', 'Image uploaded successfully!');
+}
+
 
     public function render()
     {

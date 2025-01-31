@@ -26,27 +26,28 @@ class AddProduct extends Component
     ];
 
     public function saveProduct()
-    {
-        $this->validate();
+{
+    $this->validate();
 
-        // Save the uploaded image
-        $imagePath = $this->image->store('products', 'public');
+    // Save the uploaded image to the 'uploads' directory
+    $imagePath = $this->image->store('uploads', 'public');
 
-        // Create a new product
-        Product::create([
-            'name' => $this->name,
-            'price' => $this->price,
-            'size' => implode(',', $this->size),
-            'description' => $this->description,
-            'target_file' => $imagePath,
-        ]);
+    // Create a new product
+    Product::create([
+        'name' => $this->name,
+        'price' => $this->price,
+        'size' => implode(',', $this->size),
+        'description' => $this->description,
+        'target_file' => $imagePath, // Store the image path in the database
+    ]);
 
-        // Reset fields and close the modal
-        $this->reset(['name', 'price', 'size', 'description', 'image']);
-        $this->showModal = false;
+    // Reset fields and close the modal
+    $this->reset(['name', 'price', 'size', 'description', 'image']);
+    $this->showModal = false;
 
-        session()->flash('message', 'Product added successfully!');
-    }
+    session()->flash('message', 'Product added successfully!');
+}
+
 
     public function render()
     {

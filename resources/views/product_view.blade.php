@@ -16,50 +16,12 @@
             <h1 class="text-3xl font-bold mb-4">{{ $product->name }}</h1>
             <h4 class="text-2xl font-bold text-gray-800 mb-4">${{ number_format($product->price, 2) }}</h4>
 
-            <!-- Select Size -->
-            <label for="size" class="block mb-2">Select Size</label>
-            <div id="sizeOptions" class="flex flex-wrap gap-2 mb-4">
-                @php
-                    $sizes = explode(',', $product->size);
-                @endphp
-                @if (!empty($sizes) && count($sizes) > 0 && $sizes[0] !== '')
-                    @foreach ($sizes as $size)
-                        <button 
-                            class="size-box border border-gray-300 px-4 py-2 rounded hover:bg-gray-100"
-                            data-size="{{ $size }}">
-                            {{ $size }}
-                        </button>
-                    @endforeach
-                @else
-                    <p class="text-gray-500">No sizes available</p>
-                @endif
-            </div>
-            <p id="sizeError" class="text-red-500 text-sm mb-4" style="display: none;">Please select a size.</p>
-
-            <!-- Quantity and Add to Cart -->
-<label for="quantity" class="block mb-2">Quantity</label>
-<input 
-    type="number" 
-    id="quantity" 
-    min="1" 
-    value="1" 
-    class="form-control w-20 p-2 border border-gray-300 rounded mb-4"
-    oninput="if (this.value < 1) this.value = 1;">
-<button 
-    onclick="addToCart()" 
-    class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 disabled:opacity-50"
-    id="addToCartBtn" 
-    disabled>
-    Add to Cart
-</button>
-
+            <!-- Livewire Component for Adding to Cart -->
+            <livewire:add-to-cart :product="$product" />
 
             <!-- Product Description -->
             <h3 class="text-lg font-semibold mt-6 mb-2">Product Details</h3>
             <p class="text-gray-600">{{ $product->description }}</p>
-
-            <!-- Success Message -->
-            <p id="successMessage" class="text-green-500 mt-4" style="display: none;">Product added to cart!</p>
         </div>
     </div>
 
@@ -79,56 +41,4 @@
         </div>
     </div>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const sizeOptions = document.getElementById('sizeOptions');
-        const addToCartBtn = document.getElementById('addToCartBtn');
-        const sizeError = document.getElementById('sizeError');
-        let selectedSize = null;
-
-        // Handle size selection
-        sizeOptions.addEventListener('click', function (event) {
-            if (event.target.classList.contains('size-box')) {
-                const clickedSize = event.target.getAttribute('data-size');
-
-                if (selectedSize === clickedSize) {
-                    // Deselect the currently selected size
-                    event.target.classList.remove('bg-blue-500', 'text-white');
-                    event.target.classList.add('border-gray-300', 'hover:bg-gray-100');
-                    selectedSize = null;
-                    addToCartBtn.disabled = true;
-                } else {
-                    // Remove selection from other buttons
-                    document.querySelectorAll('.size-box').forEach(box => {
-                        box.classList.remove('bg-blue-500', 'text-white');
-                        box.classList.add('border-gray-300', 'hover:bg-gray-100');
-                    });
-
-                    // Add selection to clicked button
-                    event.target.classList.remove('border-gray-300', 'hover:bg-gray-100');
-                    event.target.classList.add('bg-blue-500', 'text-white');
-                    selectedSize = clickedSize;
-                    sizeError.style.display = 'none';
-                    addToCartBtn.disabled = false;
-                }
-            }
-        });
-
-        // Add to Cart
-        window.addToCart = function () {
-            if (!selectedSize) {
-                sizeError.style.display = 'block';
-                return;
-            }
-
-            // Hide the error message and show success message
-            sizeError.style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 3000);
-        };
-    });
-</script>
-
 @endsection

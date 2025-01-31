@@ -26,7 +26,6 @@
         </div>
     </section>
     
-
     <!-- Featured Products Section -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
@@ -34,10 +33,10 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
                 @foreach($products as $product)
                     <div class="bg-white shadow-md rounded-lg p-4">
-                        <a href="{{ route('home', $product->id) }}">
+                        <a href="{{ route('product.view', $product->id) }}">
                             <img src="{{ asset('storage/' . $product->target_file) }}" alt="{{ $product->name }}" class="w-full h-48 object-cover rounded-lg mb-4">
                         </a>
-                        <a href="{{ route('home', $product->id) }}" class="block text-lg font-semibold text-gray-800 hover:text-blue-600 mb-2">{{ $product->name }}</a>
+                        <a href="{{ route('product.view', $product->id) }}" class="block text-lg font-semibold text-gray-800 hover:text-blue-600 mb-2">{{ $product->name }}</a>
                         <p class="text-lg font-bold text-gray-700 mt-2">${{ number_format($product->price, 2) }}</p>
                     </div>
                 @endforeach

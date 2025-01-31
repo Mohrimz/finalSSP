@@ -17,16 +17,18 @@ class ProductController extends Controller
 {
     $products = Product::all();
 
-    // Map each product to include the full URL for the image
-    $products = $products->map(function ($product) {
-        $product->target_file = asset('storage/' . $product->target_file); // Prefix with the full URL
+    // Ensure URLs are formatted correctly
+    $products = Product::all()->map(function ($product) {
+        $product->target_file = asset('storage/' . $product->target_file);
         return $product;
     });
+    
 
     return response()->json([
         'success' => true,
         'data' => $products,
     ]);
 }
+
 
 }
