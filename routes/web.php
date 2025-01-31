@@ -55,5 +55,4 @@ Route::get('/product/{id}', [ProductViewController::class, 'show'])->name('produ
 Route::get('/cart', [CartPageController::class, 'index'])->name('cart');
 
 Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
-Route::delete('/wishlist/remove/{id}', [WishlistController::class, 'remove'])->name('wishlist.remove');
 require __DIR__.'/auth.php';

@@ -12,24 +12,6 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        // Retrieve wishlist items from session
-        $wishlist = Session::get('wishlist', []);
-
-        return view('wishlist', compact('wishlist'));
-    }
-
-    /**
-     * Remove a product from the wishlist.
-     */
-    public function remove($id)
-    {
-        $wishlist = Session::get('wishlist', []);
-
-        if (isset($wishlist[$id])) {
-            unset($wishlist[$id]);
-            Session::put('wishlist', $wishlist);
-        }
-
-        return redirect()->route('wishlist')->with('success', 'Product removed from wishlist.');
+        return view('wishlist'); // Livewire will handle rendering the wishlist
     }
 }
