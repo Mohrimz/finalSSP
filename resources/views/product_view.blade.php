@@ -12,7 +12,6 @@
 
         <!-- Product Details -->
         <div>
-            <p class="text-sm text-gray-500 mb-2">Home / {{ $product->name }}</p>
             <h1 class="text-3xl font-bold mb-4">{{ $product->name }}</h1>
             <h4 class="text-2xl font-bold text-gray-800 mb-4">${{ number_format($product->price, 2) }}</h4>
 

@@ -18,7 +18,7 @@
                     Discover our latest collection of workout gear that blends style, comfort, and performance.
                 </p>
                 <div class="space-x-4">
-                    <a href="{{ route('home') }}" class="bg-yellow-300 text-black py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <a href="{{ route('products') }}" class="bg-yellow-300 text-black py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:-translate-y-1">
                         Explore Collection
                     </a>
                 </div>
@@ -40,6 +40,19 @@
                         <p class="text-lg font-bold text-gray-700 mt-2">${{ number_format($product->price, 2) }}</p>
                     </div>
                 @endforeach
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Video Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center text-white mb-6">Experience Trendy.lk in Motion</h2>
+            <div class="flex justify-center">
+                <video controls class="w-full max-w-3xl rounded-lg shadow-lg">
+                    <source src="{{ asset('storage/uploads/VDO.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
