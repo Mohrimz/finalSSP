@@ -45,15 +45,5 @@
     </section>
 
     <!-- Promotional Video Section -->
-    <section class="py-16 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center text-white mb-6">Experience Trendy.lk in Motion</h2>
-            <div class="flex justify-center">
-                <video controls class="w-full max-w-3xl rounded-lg shadow-lg">
-                    <source src="{{ asset('storage/uploads/VDO.mp4') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </section>
+    
 @endsection
