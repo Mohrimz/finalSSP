@@ -36,14 +36,24 @@
                         <a href="{{ route('product.view', $product->id) }}">
                             <img src="{{ asset('storage/' . $product->target_file) }}" alt="{{ $product->name }}" class="w-full h-48 object-cover rounded-lg mb-4">
                         </a>
-                        <a href="{{ route('product.view', $product->id) }}" class="block text-lg font-semibold text-gray-800 hover:text-blue-600 mb-2">{{ $product->name }}</a>
-                        <p class="text-lg font-bold text-gray-700 mt-2">${{ number_format($product->price, 2) }}</p>
+                        <a href="{{ route('product.view', $product->id) }}" class="block text-lg font-semibold text-gray-800 hover:text-blue-600 mb-2">
+                            {{ $product->name }}
+                        </a>
+                        <p class="text-lg font-bold text-gray-700 mt-2">
+                            ${{ number_format($product->price, 2) }}
+                        </p>
                     </div>
                 @endforeach
             </div>
         </div>
     </section>
+    
+<!-- Example: If your image is wider than it is tall, you might set a larger height -->
+<section class="relative w-full h-80 bg-center bg-cover" style="background-image: url('{{ asset('storage/uploads/ss (2).png') }}');">
+    <!-- You can add content here if needed -->
+</section>
 
-    <!-- Promotional Video Section -->
+
+
     
 @endsection

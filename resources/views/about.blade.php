@@ -5,77 +5,105 @@
 @section('content')
 <div class="container mx-auto p-4">
     <!-- Hero Section -->
-    <div class="text-center py-16 bg-gray-100 rounded-lg">
-        <h1 class="text-5xl font-bold text-gray-800 mb-4">ABOUT TRENDY.LK</h1>
-        <p class="text-xl text-gray-600">Style, Comfort, and Quality in Every Step</p>
+    <div class="text-center py-20 rounded-lg shadow-sm" style="background-image: url('{{ asset('storage/uploads/ss (2).png') }}'); background-size: cover; background-position: center;">
+    <div class=" bg-opacity-50 py-20 rounded-lg">
+        
+    </div>
+</div>
+
+    <!-- Our Mission Section -->
+    <div class="my-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Our Mission</h2>
+        <p class="text-gray-700 text-center max-w-2xl mx-auto leading-relaxed">
+            At Trendy.lk, we’re on a mission to redefine footwear by blending cutting-edge design with unparalleled comfort. 
+            We believe that every step you take should reflect your unique style while keeping you comfortable all day long.
+        </p>
     </div>
 
     <!-- Our Story Section -->
-    <div class="my-12">
+    <div class="my-16">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Story</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
                 <p class="text-gray-700 leading-relaxed mb-4">
-                    Welcome to Trendy.lk, Sri Lanka’s go-to destination for stylish and high-quality footwear. 
-                    Our journey began with a simple vision—to create shoes that blend fashion, comfort, and durability. 
+                    Founded in 2015, Trendy.lk started as a small idea to revolutionize the footwear industry in Sri Lanka. 
+                    What began as a passion project has now grown into a trusted brand loved by thousands.
                 </p>
                 <p class="text-gray-700 leading-relaxed">
-                    Whether it's casual sneakers, formal dress shoes, or everyday wear, our collections are designed 
-                    for people who value both style and comfort. We believe that the right pair of shoes can make all the difference.
+                    Our journey has been fueled by a commitment to quality, innovation, and customer satisfaction. 
+                    From casual sneakers to elegant formal wear, we’ve curated collections that cater to every occasion and lifestyle.
                 </p>
             </div>
-            <div>
-                <img src="{{ asset('images/about-story.jpg') }}" alt="Our Story" class="w-full h-auto rounded-lg shadow-md">
+            <div class="relative">
+                <img src="{{ asset('images/about-story.jpg') }}" alt="Our Story" class="w-full h-auto rounded-lg shadow-lg">
+                <div class="absolute inset-0 bg-black bg-opacity-20 rounded-lg"></div>
             </div>
         </div>
     </div>
 
-    <!-- Our Commitment Section -->
-    <div class="my-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Commitment</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-                <img src="{{ asset('images/about-commitment.jpg') }}" alt="Our Commitment" class="w-full h-auto rounded-lg shadow-md">
-            </div>
-            <div>
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    At Trendy.lk, we are committed to delivering shoes that combine style, durability, and all-day comfort. 
-                    Our team carefully selects premium materials to ensure every pair is built to last.
+    <!-- Our Values Section -->
+    <div class="my-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Core Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Value 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-blue-500 mb-4">👟</div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Quality Craftsmanship</h3>
+                <p class="text-gray-700">
+                    We use premium materials and meticulous craftsmanship to ensure every pair of shoes is built to last.
                 </p>
-                <p class="text-gray-700 leading-relaxed">
-                    We also believe in sustainability, which is why we continually explore eco-friendly alternatives 
-                    without compromising on quality. When you choose Trendy.lk, you're choosing fashion with purpose.
+            </div>
+            <!-- Value 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-purple-500 mb-4">🌍</div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Sustainability</h3>
+                <p class="text-gray-700">
+                    We’re committed to reducing our environmental footprint by exploring eco-friendly materials and practices.
+                </p>
+            </div>
+            <!-- Value 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                <div class="text-4xl text-green-500 mb-4">❤️</div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Customer First</h3>
+                <p class="text-gray-700">
+                    Your satisfaction is our priority. We strive to deliver exceptional products and experiences.
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- Meet the Founders Section -->
-    <div class="my-12">
-        <h2 class="text-3xl font-bold text-gray-800 mb-8">Meet the Founders</h2>
+    <!-- Meet the Team Section -->
+    <div class="my-16">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Meet the Team</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Founder 1 -->
-            <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="{{ asset('images/founder1.jpg') }}" alt="Founder Name" class="w-32 h-32 rounded-full mx-auto mb-4">
+            <!-- Team Member 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                <img src="{{ asset('storage/uploads/dp.jpg') }}" alt="Michael Sole" class="w-32 h-32 rounded-full mx-auto mb-4">
                 <h3 class="text-2xl font-semibold text-gray-800">Michael Sole</h3>
                 <p class="text-gray-600">Co-Founder & CEO</p>
                 <p class="text-gray-700 mt-4">
-                    With years of experience in footwear design, Michael ensures that every pair of Trendy.lk shoes 
-                    meets the highest standards of quality and craftsmanship. His passion for stylish yet functional shoes 
-                    drives the brand forward.
+                    Michael’s expertise in footwear design ensures that every product meets the highest standards of quality and style.
                 </p>
             </div>
-            <!-- Founder 2 -->
-            <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                <img src="{{ asset('images/founder2.jpg') }}" alt="Founder Name" class="w-32 h-32 rounded-full mx-auto mb-4">
+            <!-- Team Member 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+                <img src="{{ asset('images/founder2.jpg') }}" alt="Emily Stride" class="w-32 h-32 rounded-full mx-auto mb-4">
                 <h3 class="text-2xl font-semibold text-gray-800">Emily Stride</h3>
                 <p class="text-gray-600">Co-Founder & Creative Director</p>
                 <p class="text-gray-700 mt-4">
-                    Emily brings innovation and style to Trendy.lk. With a keen eye for the latest fashion trends, 
-                    she ensures our collections stay ahead of the curve while maintaining comfort and versatility.
+                    Emily’s innovative vision keeps Trendy.lk at the forefront of fashion trends while ensuring comfort and versatility.
                 </p>
             </div>
         </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="my-16 text-center bg-gradient-to-r from-blue-50 to-purple-50 py-12 rounded-lg shadow-sm">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Join the Trendy.lk Family</h2>
+        <p class="text-gray-700 mb-6">Discover the perfect pair for every step of your journey.</p>
+        <a href="{{ route('home') }}" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+            Shop Now
+        </a>
     </div>
 </div>
 @endsection
