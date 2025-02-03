@@ -2,7 +2,6 @@
 
 namespace App\Livewire;
 
-
 use App\Models\Product;
 use Livewire\Component;
 use Illuminate\Support\Facades\Session;
@@ -27,8 +26,9 @@ class Cart extends Component
 
     public function updateCart($productId, $quantity)
     {
+        // Ensure the quantity is at least 1
         if ($quantity < 1) {
-            return;
+            $quantity = 1;
         }
 
         $cart = Session::get('cart', []);

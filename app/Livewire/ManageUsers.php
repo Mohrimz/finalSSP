@@ -12,13 +12,10 @@ class ManageUsers extends Component
 
     public $search = '';
 
-    // Use Tailwind CSS for pagination styling
     protected $paginationTheme = 'tailwind';
 
-    // Allow search to be in the URL query string
     protected $queryString = ['search'];
 
-    // Reset pagination when the search term is updated
     public function updatingSearch()
     {
         $this->resetPage();

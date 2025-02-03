@@ -1,5 +1,4 @@
 <div class="p-6 bg-gray-100">
-    <!-- Search Input -->
     <div class="flex space-x-2 mb-6">
         <input 
             type="text" 
@@ -14,7 +13,6 @@
         </button>
     </div>
 
-    <!-- Display Products -->
     @if($products->isNotEmpty())
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             @foreach ($products as $product)
@@ -28,13 +26,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536M9 11l7.071-7.071a2 2 0 012.828 0l2.828 2.828a2 2 0 010 2.828L13 16.828M9 11L4.828 15.172a4 4 0 01-5.656 0L9 11zm0 0l4.828-4.828a4 4 0 015.656 0L9 11z" />
                         </svg>
                     </a>
-                    <!-- Product Details -->
                     <img src="{{ asset('storage/' . $product->target_file) }}" alt="{{ $product->name }}" class="w-full h-48 object-cover rounded-lg mb-4">
                     <h3 class="text-lg font-semibold">{{ $product->name }}</h3>
                     <p class="text-gray-600">${{ $product->price }}</p>
                     <p class="text-gray-500 text-sm">{{ \Illuminate\Support\Str::limit($product->description, 50) }}</p>
                     
-                    <!-- Activate/Deactivate Buttons -->
                     <div class="mt-4">
                         @if($product->status === 'active')
                             <button 

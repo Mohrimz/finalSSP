@@ -18,20 +18,17 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         @foreach($products as $product)
             <div class="bg-white shadow-md rounded-lg p-4 relative">
-                <!-- Product Image Container -->
                 <div class="relative">
                     <a href="{{ route('product.view', $product->id) }}">
                         <img src="{{ asset('storage/' . $product->target_file) }}" 
                              alt="{{ $product->name }}" class="w-full h-48 object-cover rounded-lg mb-4">
                     </a>
 
-                    <!-- Livewire Wishlist Button (Top Right of Image) -->
                     <div class="absolute top-2 right-2">
                         <livewire:wishlist :productId="$product->id" />
                     </div>
                 </div>
 
-                <!-- Product Name -->
                 <a href="{{ route('product.view', $product->id) }}" 
                    class="block text-lg font-semibold text-gray-800 hover:text-blue-600 mb-2">
                     {{ $product->name }}

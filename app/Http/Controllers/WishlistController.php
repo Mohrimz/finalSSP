@@ -12,6 +12,6 @@ class WishlistController extends Controller
      */
     public function index()
     {
-        return view('wishlist'); // Livewire will handle rendering the wishlist
+        return view('wishlist'); 
     }
 }

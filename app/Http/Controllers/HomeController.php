@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;  // Make sure you import the Product model
+use App\Models\Product;  
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

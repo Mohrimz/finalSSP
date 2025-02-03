@@ -1,15 +1,12 @@
 @extends('layouts.x-layout')
 
 @section('content')
-    <!-- Hero Section -->
     <section class="relative w-full h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
         <div class="absolute inset-0">
-            <!-- Fullscreen Image -->
             <img src="{{ asset('storage/uploads/100.PNG') }}" alt="Workout" class="w-full h-full object-cover">
         </div>
 
         <div class="absolute inset-0 flex items-center justify-center text-center text-white">
-            <!-- Text Content -->
             <div class="space-y-6">
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
                     Transform Your Workout <br><span class="text-yellow-300">Experience</span>
@@ -48,9 +45,7 @@
         </div>
     </section>
     
-<!-- Example: If your image is wider than it is tall, you might set a larger height -->
 <section class="relative w-full h-80 bg-center bg-cover" style="background-image: url('{{ asset('storage/uploads/ss (2).png') }}');">
-    <!-- You can add content here if needed -->
 </section>
 
 

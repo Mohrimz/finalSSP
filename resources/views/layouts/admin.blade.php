@@ -33,16 +33,17 @@
             <li>
                 <a 
                     href="{{ route('admin.manage.users') }}" 
-                    class="py-3 px-4 rounded-lg transition-all block {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-blue-700' : 'text-gray-300 hover:bg-blue-700' }}">
+                    class="py-3 px-4 rounded-lg transition-all block {{ Route::currentRouteName() === 'admin.manage.users' ? 'bg-blue-700' : 'text-gray-300 hover:bg-blue-700' }}">
                     Manage Users
                 </a>
             </li>
             <li>
-                <a 
-                    href="{{ route('admin.dashboard') }}" 
-                    class="py-3 px-4 rounded-lg transition-all block {{ Route::currentRouteName() === 'admin.dashboard' ? 'bg-blue-700' : 'text-gray-300 hover:bg-blue-700' }}">
-                    Manage Orders
-                </a>
+            <a 
+    href="{{ route('admin.manage.orders') }}" 
+    class="py-3 px-4 rounded-lg transition-all block {{ Route::currentRouteName() === 'admin.manage.orders' ? 'bg-blue-700' : 'text-gray-300 hover:bg-blue-700' }}">
+    Manage Orders
+</a>
+
             </li>
             <li>
                 <a 

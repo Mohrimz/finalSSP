@@ -1,14 +1,12 @@
 <div class="container mx-auto p-6">
     <h1 class="text-3xl font-bold mb-6">Manage Users</h1>
 
-    <!-- Flash Message -->
     @if (session()->has('message'))
         <div class="bg-green-200 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
             {{ session('message') }}
         </div>
     @endif
 
-    <!-- Search Input with Button -->
     <div class="mb-6 flex">
         <input 
             type="text" 
@@ -24,7 +22,6 @@
         </button>
     </div>
 
-    <!-- Users Table -->
     <div class="overflow-x-auto bg-white shadow-md rounded-lg">
         <table class="min-w-full divide-y divide-gray-200">
             <thead class="bg-gray-50">
@@ -59,7 +56,6 @@
                 @endforelse
             </tbody>
         </table>
-        <!-- Pagination Links -->
         <div class="p-4">
             {{ $users->links() }}
         </div>

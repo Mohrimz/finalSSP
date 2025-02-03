@@ -12,7 +12,8 @@ class AddToCart extends Component
     public $selectedSize = null;
     public $quantity = 1;
 
-    protected $listeners = ['cartUpdated' => 'render'];
+    // If you need to listen for an event (and your Livewire version supports it), you can add listeners.
+    // protected $listeners = ['cartUpdated' => 'render'];
 
     public function selectSize($size)
     {
@@ -32,18 +33,17 @@ class AddToCart extends Component
             $cart[$this->product->id]['quantity'] += $this->quantity;
         } else {
             $cart[$this->product->id] = [
-                'name' => $this->product->name,
-                'price' => $this->product->price,
+                'name'     => $this->product->name,
+                'price'    => $this->product->price,
                 'quantity' => $this->quantity,
-                'image' => $this->product->target_file,
-                'size' => $this->selectedSize
+                'image'    => $this->product->target_file,
+                'size'     => $this->selectedSize,
             ];
         }
 
         Session::put('cart', $cart);
 
-        // Correct way to emit an event in Livewire
-        $this->dispatch('cartUpdated');
+
         session()->flash('success', 'Product added to cart!');
     }
 

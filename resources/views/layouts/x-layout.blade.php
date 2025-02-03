@@ -52,10 +52,18 @@
             </nav>
 
             <div class="flex items-center space-x-8">
-                <a href="{{ route('cart') }}" class="text-gray-700 hover:text-black transition-colors duration-200 relative text-lg">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="absolute top-0 right-0 bg-orange-300 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
-                </a>
+            <a href="{{ route('cart') }}" class="relative inline-block">
+    <!-- Icon Container -->
+    <div class=" p-3 ">
+         <i class="fas fa-shopping-cart text-xl"></i>
+    </div>
+    <!-- Live Updating Cart Count Badge -->
+    @livewire('cart-icon')
+</a>
+
+
+
+
                 <a href="{{ route('wishlist') }}" class="text-gray-700 hover:text-black transition-colors duration-200 text-lg"><i class="fas fa-heart"></i></a>
 
                 <div class="flex items-center space-x-6">

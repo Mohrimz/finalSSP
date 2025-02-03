@@ -38,7 +38,7 @@ class Wishlist extends Component
         }
 
         Session::put('wishlist', $wishlist);
-        $this->dispatch('wishlistUpdated'); // Notify other components if needed
+        $this->dispatch('wishlistUpdated'); 
     }
 
     public function render()

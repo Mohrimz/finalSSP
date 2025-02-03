@@ -12,24 +12,22 @@ class ProductController extends Controller
     /**
      * Display a paginated listing of the products.
      */
-    public function index(Request $request)
-    {
-        $searchTerm = $request->query('search', '');
+    public function index()
+{
+    $products = Product::all();
 
-        $query = Product::query();
+    // Ensure URLs are formatted correctly
+    $products = Product::all()->map(function ($product) {
+        $product->target_file = asset('storage/' . $product->target_file);
+        return $product;
+    });
+    
 
-        if ($searchTerm) {
-            $query->where(function($q) use ($searchTerm) {
-                $q->where('name', 'LIKE', '%' . $searchTerm . '%')
-                  ->orWhere('description', 'LIKE', '%' . $searchTerm . '%')
-                  ->orWhere('size', 'LIKE', '%' . $searchTerm . '%');
-            });
-        }
-
-        $products = $query->paginate(10);
-
-        return response()->json($products);
-    }
+    return response()->json([
+        'success' => true,
+        'data' => $products,
+    ]);
+}
 
     /**
      * Store a newly created product in storage.

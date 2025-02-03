@@ -8,6 +8,6 @@ class CartPageController extends Controller
 {
     public function index()
     {
-        return view('cart'); // This will load cart.blade.php
+        return view('cart'); 
     }
 }

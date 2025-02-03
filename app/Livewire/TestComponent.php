@@ -7,8 +7,8 @@ use Livewire\Component;
 
 class TestComponent extends Component
 {
-    public $search = ''; // To bind the search input
-    public $products = []; // To hold the fetched products
+    public $search = ''; 
+    public $products = []; 
 
     public function mount()
     {
@@ -17,7 +17,6 @@ class TestComponent extends Component
 
     public function fetchProducts()
     {
-        // Fetch products matching the search term
         $this->products = Product::where('name', 'like', '%' . $this->search . '%')
             ->orWhere('description', 'like', '%' . $this->search . '%')
             ->get();
@@ -31,7 +30,6 @@ class TestComponent extends Component
             $product->status = $newStatus;
             $product->save();
 
-            // Refresh products after updating the status
             $this->fetchProducts();
 
             session()->flash('message', 'Product status updated successfully!');

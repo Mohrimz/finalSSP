@@ -1,5 +1,4 @@
 <div>
-    <!-- FAB Add Product Button -->
     <button 
         class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all focus:outline-none z-50"
         wire:click="$set('showModal', true)">
@@ -11,7 +10,6 @@
     <!-- Modal -->
     @if($showModal)
         <div class="fixed inset-0 z-50 flex items-center justify-center">
-            <!-- Background Blur -->
             <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
 
             <!-- Modal Content -->

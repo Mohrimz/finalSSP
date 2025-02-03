@@ -31,8 +31,8 @@ class WishlistManager extends Component
             Session::put('wishlist', $wishlist);
         }
 
-        $this->loadWishlist(); // Reload wishlist after removal
-        $this->dispatch('wishlistUpdated'); // Notify other components if needed
+        $this->loadWishlist(); 
+        $this->dispatch('wishlistUpdated'); 
     }
 
     public function render()
